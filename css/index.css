@@ -1,39 +1,73 @@
 @import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
-:root{
+
+:root {
     font-family: 'DotGothic16', sans-serif;
     --main-color: black;
+    --accent-color: rgb(50, 206, 211);
 }
-*{
+
+* {
     margin: 0;
-    padding: 0;;
+    padding: 0;
 }
-header .logo{
+nav {
+    background-color: var(--accent-color);
+}
+.container {
+    max-width: 980px;
+    margin: auto;
+}
+
+main {
+    max-width: 980px;
+    margin: auto;
+}
+
+main .products article .buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+h2 {
+    padding: 5px;
+}
+
+header .logo {
     font-size: 3.5rem;
     text-align: center;
     text-transform: uppercase;
 }
-header .menu a{
+
+header .menu {
+    padding: 0 5px;
+}
+
+header .menu a {
     display: block;
     text-transform: uppercase;
     text-decoration: none;
     color: var(--main-color);
 }
-header .menu a:hover{
+
+header .menu a:hover {
     font-weight: bold;
 }
+
 @media (min-width: 500px) {
-    
-    header nav{
-        display: flex;        
+
+    header nav div {
+        display: flex;
     }
-    header nav .menu{
+
+    header nav .menu {        
         display: flex;
         flex: 1;
         justify-content: space-around;
         align-items: center;
     }
 }
-header .banner{
+
+header .banner {
     background-image: url(../img/baby-yoda.svg);
     background-size: cover;
     background-position: center;
@@ -42,4 +76,46 @@ header .banner{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+header .banner h1 {
+    font-weight: normal;
+    color: var(--accent-color);
+}
+
+.button {
+    padding: 0.35em 1.2em;
+    border: 0.1em solid #ffffff;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    transition: color 0.7s;
+    background-color: transparent;
+}
+
+.button:hover {
+    background-color: #ffffff;
+    color: #000000;
+    cursor: pointer;
+}
+
+main .products article {
+    border: 1px solid var(--main-color);
+    padding: 5px;
+    margin: 5px;
+}
+
+main .products article img {
+    display: block;
+    width: 100%;
+}
+
+@media (min-width: 600px) {
+    main .products{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 5px;
+    }
 }
